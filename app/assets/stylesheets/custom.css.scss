@@ -1,0 +1,62 @@
+
+#logo
+{
+  float:left;
+
+  color:black;
+  text-transform:uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#new-article
+{
+  font-size:0.6cm;
+  color:white;
+  text-transform:uppercase;
+  letter-spacing: -1px;
+  padding:20px;
+}
+
+#logo:hover{
+  color:#F7F7F7;
+  text-decoration: none;
+}
+#new-article:hover{
+  color:grey;
+  text-decoration: none;
+}
+.center{
+display: flex;
+  justify-content: center;
+  text-align: center;
+
+}
+.article-title {
+
+  font-weight: bold;
+
+  font-size: 1.5em;
+
+}
+
+.article-body {
+
+  border-top: 1px solid #eaeaea;
+
+  padding-top: 15px;
+
+  padding-bottom: 15px;
+
+}
+.listing{
+  list-style: none;
+  padding-left:0;
+}
+.article-meta-details {
+
+  border-top: 1px solid #eaeaea;
+
+  margin-top: 15px;
+
+}
