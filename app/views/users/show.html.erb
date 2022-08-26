@@ -1,3 +1,4 @@
+<%=render 'search/form' %>
 <h1 align="center">Welcome to <%= @user.username %>'s page</h1>
 
 <div class="center">
@@ -14,4 +15,5 @@
 <div class="center">
 <h4 ><%= @user.username %>'s articles</h4>
 </div>
+
 <%= render 'articles/article' ,obj: @user.articles%>

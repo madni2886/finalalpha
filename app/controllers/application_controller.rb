@@ -14,5 +14,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
-
+  before_action :set_query
+  def set_query
+    @query=Article.ransack(params[:q])
+  end
 end

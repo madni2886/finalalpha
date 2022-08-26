@@ -52,11 +52,17 @@ gem 'pry', '~> 0.13.1'
 gem "jquery-rails"
 gem 'bootstrap-sass'
 gem "sass-rails"
+gem 'searchkick'
+gem 'wicked_pdf', '~> 2.6', '>= 2.6.3'
+gem 'wkhtmltopdf-binary'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-end
+  gem 'rubocop'
 
+end
+gem "image_processing", ">= 1.2"
 group :development do
   gem "sqlite3", "~> 1.4"
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -78,3 +84,7 @@ end
 group :production do
   gem 'pg'
 end
+
+gem "ransack", "~> 3.2"
+gem 'prawn', '~> 2.4'
+gem "prawn-table", "~> 0.2.2"

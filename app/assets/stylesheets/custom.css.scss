@@ -49,8 +49,9 @@ display: flex;
   padding-bottom: 15px;
 
 }
-.listing{
-  list-style: none;
+ul{
+  list-style-type: none;
+
   padding-left:0;
 }
 .article-meta-details {
@@ -58,5 +59,36 @@ display: flex;
   border-top: 1px solid #eaeaea;
 
   margin-top: 15px;
+
+}
+.full-img {
+  object-fit: contain;
+  height: 100%;
+  width: 500px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.flex_products{
+  display: flex;
+  flex-wrap: wrap;
+}
+.image{
+  width:250px;
+  height:300px;
+}
+.products{
+  padding: 30px;
+}
+.title{
+  font-weight: bold;
+  color: #2E2F30;
+  font-size: 18px;
+
+}
+.desc{
+  display: flex;
+  width:250px;
+font-size: 16px;
+  flex-wrap: wrap;
 
 }
