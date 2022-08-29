@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if user && user.authenticate(params[:session][:password])
          session[:user_id] = user.id
-         format.html{redirect_to users_path(user), notice: "You have successfully logged in." } 
+         format.html{redirect_to user_path(user), notice: "You have successfully logged in." }
       else
         flash[:unprocessable_entity] = "Wrong email or password"
          format.html{render :new, status: :unprocessable_entity } 

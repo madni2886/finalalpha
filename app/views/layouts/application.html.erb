@@ -19,7 +19,12 @@
   <body>
 
        <%= render 'layouts/navigation' %>
+<p class="alert">
+  <%=alert %>
+</p>
        <%= render 'layouts/messages' %>
          <%= yield %>
+       <hr>
+       <%= render 'layouts/footer' %>
    </body>
 </html>

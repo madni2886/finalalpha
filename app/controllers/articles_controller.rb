@@ -79,7 +79,7 @@ class ArticlesController < ApplicationController
           pdf.text "Title:#{@article.title}"
           pdf.text"Description:#{@article.description}"
           a_image = StringIO.open(@article.avatar.download)
-         
+
           pdf.image a_image, fit: [400,600], position: :center
 
 

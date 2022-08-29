@@ -1,29 +1,7 @@
 <%=render 'search/form' %>
-<h1 class="text-center">
-  <%=pluralize(@post.count,"result") %>
 
-</h1>
-<p>Find me in app/views/search/index.html.erb</p>
-<div class="container">
-  <table class="table table_dark table-striped">
-    <tr>
-      <th>
-        <%=sort_link(@query,:title,"Title",default_order: :asc) %>
-      </th>
-      <th>
-        <%=sort_link(@query,:description,"CONTENT",default_order: :asc) %>
-      </th>
-    </tr>
-    <% @post.each do |post| %>
-      <tr>
-        <td>
-          <%=link_to post.title,post%>
-        </td>
-        <td>
-          <%=post.description.truncate_words(25) %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+<h1 class="center">Listing all articles</h1>
+<%=render 'articles/article',obj:@post%>
 
+
+<%=paginate @post %>

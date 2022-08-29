@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'articles#index'
   get 'signup', to:'users#new'
   get 'suggestion', to:'search#load_suggestions'
