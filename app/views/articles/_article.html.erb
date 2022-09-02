@@ -1,40 +1,32 @@
-
-
 <div class="flex_products">
   <% obj.each do |article| %>
     <div class="products" >
-
-    <% if article.avatar.attached? %>
+      <% if article.avatar.attached? %>
         <div class="title">
-        <%= link_to article.title, article_path(article),class:'title'  %>
+          <%= link_to article.title, user_articles_path(article),class:'title'  %>
         </div>
-          <%= image_tag article.avatar, class:"image"%>
-    <%else%>
+        <%= image_tag article.avatar, class:"image"%>
+      <%else%>
         <div class="title">
-          <%= link_to article.title, article_path(article) ,class:'title' %>
+          <%= link_to article.title, user_article_path(article) ,class:'title' %>
         </div>
-    <% end %>
+      <% end %>
       <div class="desc">
-
-    <%=truncate(article.description,length:60) %>
+        <%=truncate(article.description,length:60) %>
       </div>
-        <div>
-    <small>Created by: <%= article.user.username if article.user%>,
-      <%= time_ago_in_words(article.created_at) %> ago,<br> last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
-        </div>
-
-<div class="Button">
-            <%if logged_in? && current_user==article.user %>
-            <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-xs btn-primary" %>
-
-            <%= link_to "Delete", article_path(article), method: :delete,
+      <div>
+        <small>Created by: <%= article.user.username if article.user%>,
+          <%= time_ago_in_words(article.created_at) %> ago,<br>
+           last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
+      </div>
+      <div class="Button">
+        <%if logged_in? && current_user==article.user %>
+          <%= link_to "Edit this article", edit_user_article_path(article), class: "btn btn-xs btn-primary" %>
+          <%= link_to "Delete", user_article_path(article), method: :delete,
                         data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
                         class: "btn btn-xs btn-danger"  %>
-            <%end%>
-</div>
-
+        <%end%>
+      </div>
     </div>
-
   <% end %>
-
 </div>

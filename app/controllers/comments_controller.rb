@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
   def new
-    @comment=Comment.new
-
+    @comment = Comment.new
   end
+
   def create
     if logged_in?
-      @comment=current_user.comments.new(comment_params)
+      @comment = current_user.comments.new(comment_params)
 
-      @comment.article_id=session[:article_id]
+      @comment.article_id = session[:article_id]
 
       respond_to do |format|
         if @comment.save
@@ -16,18 +16,14 @@ class CommentsController < ApplicationController
           format.html { render :new, status: :unprocessable_entity }
         end
       end
-
     end
-
   end
 
   private
-  def comment_params
 
+  def comment_params
     params
       .require(:comment)
       .permit(:content)
-
   end
-
 end

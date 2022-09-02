@@ -1,5 +1,4 @@
 <%= search_form_for(@article, url: search_path,method: :get, class: "d-flex") do |f|%>
   <%= f.search_field :title_cont, placeholder:"search.." %>
   <%=f.submit 'search' %>
-
 <%end%>

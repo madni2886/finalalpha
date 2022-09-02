@@ -1,33 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-
-
       <%if logged_in? %>
-        <%= link_to "Alpha blog" , articles_path ,class:"navbar-brand",id:"logo"%>
-
-
-
-          <li ><%= link_to "New Article" ,new_article_path,class:"navbar-item",id:"new-article" %>
+        <%= link_to "Alpha blog" , user_articles_path(@article) ,class:"navbar-brand",id:"logo"%>
+        <li ><%= link_to "New Article" ,new_user_article_path(@article),class:"navbar-item",id:"new-article" %>
         </li>
         <li ><%= link_to "logout" ,logout_path,method: :delete,class:"navbar-item",id:"new-article" %>
         </li>
       <%else %>
-        <%= link_to "Alpha blog" , articles_path ,class:"navbar-brand",id:"logo"%>
-
-
-
-
-          <li ><%= link_to "login" ,login_path,class:"navbar-item",id:"new-article" %></li>
+        <%= link_to "Alpha blog" , user_articles_path(@article) ,class:"navbar-brand",id:"logo"%>
+        <li ><%= link_to "login" ,login_path,class:"navbar-item",id:"new-article" %></li>
         <li ><%= link_to "Sign up" ,signup_path,class:"navbar-item",id:"new-article" %></li>
-        </li>
-      <%end %>
-    </ul>
-
-  </div>
+      </li>
+    <%end %>
+  </ul>
+</div>
 </nav>

@@ -1,23 +1,14 @@
 <%=render 'search/form' %>
 <h1 align="center">Welcome to <%= @user.username %>'s page</h1>
-
 <div class="center">
-<div class="row">
-
-  <div class="col-md-4 col-md-offset-4 center">
-
-
-    <%if @user.avatar.attached? %>
-      <%= image_tag @user.avatar, class:"user_image"%>
-      <br>
-    <%end %>
-
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 center">
+      <%if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, class:"user_image"%>
+        <br>
+      <%end %>
+    </div>
   </div>
-
 </div>
-</div>
-
 <h4 align="center"><%= @user.username %>'s articles</h4>
-
-
 <%= render 'articles/article' ,obj: @user.articles%>
